@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using TMPro;
 
 public class player : MonoBehaviour
 {
@@ -16,7 +18,7 @@ public class player : MonoBehaviour
         KeyCode.Alpha0, KeyCode.Alpha1, KeyCode.Alpha2, KeyCode.Alpha3,
         KeyCode.Alpha4, KeyCode.Alpha5, KeyCode.Alpha6, KeyCode.Alpha7,
         KeyCode.Alpha8, KeyCode.Alpha9,
-        KeyCode.Space, KeyCode.Return, KeyCode.Escape, KeyCode.Tab,
+        KeyCode.Space, KeyCode.Return, KeyCode.Tab,
         KeyCode.LeftShift, KeyCode.RightShift, KeyCode.LeftControl,
         KeyCode.RightControl, KeyCode.LeftAlt, KeyCode.RightAlt,
         KeyCode.UpArrow, KeyCode.DownArrow, KeyCode.LeftArrow, KeyCode.RightArrow,
@@ -25,12 +27,31 @@ public class player : MonoBehaviour
     }; // List of keys to trigger the speed boost.
     public Rigidbody2D rb;
     public KeyCode currentKey;
+    public GameManager gm;
+
+    public TextMeshProUGUI promptText;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         SetRandomKey();
+
+        GameObject gameManagerObject = GameObject.Find("GameManager");
+        if (gameManagerObject != null)
+        {
+            gm = gameManagerObject.GetComponent<GameManager>();
+            if (gm == null)
+            {
+                Debug.LogError("GameManager component not found on GameManager object.");
+            }
+        }
+        else
+        {
+            Debug.LogError("GameManager object not found in the scene.");
+        }
+
+        promptText = GameObject.FindGameObjectWithTag("Prompt").GetComponent<TextMeshProUGUI>();
     }
 
     void Update()
@@ -53,12 +74,15 @@ public class player : MonoBehaviour
             rb.velocity = vel;
             speedTimeLeft -= Time.deltaTime;
         }
+
+        gm.UpdatePoints(this);
     }
 
     void SetRandomKey()
     {
         int randomIndex = Random.Range(0, keys.Length);
         currentKey = keys[randomIndex];
+        promptText.text = currentKey.ToString();
         Debug.Log(currentKey);
     }
 }
