@@ -1,15 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     int points = 0;
     float lastPlayerMaxHeight = 0;
+    public GameObject pauseMenu;
 
     void Start()
     {
         LoadPoints(); // Load saved points when the game starts
+        pauseMenu.SetActive(false);
     }
 
     void Update()
@@ -45,5 +48,29 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("No saved points found.");
         }
+    }
+
+    public void PauseMenuToggle()
+    {
+        if (!pauseMenu)
+        {
+            Debug.Log("Error no pause menu linked");
+            return;
+        }
+
+        if (pauseMenu.activeSelf)
+        {
+            Time.timeScale = 1.0f;
+            pauseMenu.SetActive(false);
+        } else
+        {
+            Time.timeScale = 0.0f;
+            pauseMenu.SetActive(true);
+        }
+    }
+
+    public void Inventory()
+    {
+        SceneManager.LoadScene("Inventory");
     }
 }

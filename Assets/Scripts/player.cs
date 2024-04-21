@@ -63,6 +63,11 @@ public class player : MonoBehaviour
             speedTimeLeft += speedBoostTime;
             SetRandomKey();
         }
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            gm.PauseMenuToggle();
+        }
     }
 
     void FixedUpdate()
