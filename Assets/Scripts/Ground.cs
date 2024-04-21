@@ -23,7 +23,8 @@ public class Ground : MonoBehaviour
     {
         if (!hasSpawned)
         {
-            Instantiate(groundPrefab, groundSpawnPt);
+            GameObject groundObj = Instantiate(groundPrefab, groundSpawnPt.transform.position, Quaternion.identity);
+            hasSpawned = true;
         }
     }
 }

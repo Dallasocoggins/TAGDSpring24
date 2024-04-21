@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class player : MonoBehaviour
 {
-    public float speed = 1f;
+    public float speed = 500f;
     public float speedTimeLeft = 0f;
-    public float speedBoostTime = 0.1f; // Increase this value to boost the speed more.
+    public float speedBoostTime = 1.5f; // Increase this value to boost the speed more.
     public KeyCode[] keys = {
         KeyCode.A, KeyCode.B, KeyCode.C, KeyCode.D, KeyCode.E, KeyCode.F,
         KeyCode.G, KeyCode.H, KeyCode.I, KeyCode.J, KeyCode.K, KeyCode.L,
@@ -35,19 +35,23 @@ public class player : MonoBehaviour
 
     void Update()
     {
-        if(speedTimeLeft > 0f && rb.velocity.x <= 0)
-        {
-            Vector3 vel = rb.velocity;
-            vel.x += speed;
-            rb.velocity = vel;
-            speedTimeLeft -= Time.deltaTime;
-        }
 
         if (Input.GetKeyDown(currentKey))
         {
             // Apply speed boost to the rigidbody.
             speedTimeLeft += speedBoostTime;
             SetRandomKey();
+        }
+    }
+
+    void FixedUpdate()
+    {
+        if (speedTimeLeft > 0f)
+        {
+            Vector3 vel = rb.velocity;
+            vel.x = speed;
+            rb.velocity = vel;
+            speedTimeLeft -= Time.deltaTime;
         }
     }
 
