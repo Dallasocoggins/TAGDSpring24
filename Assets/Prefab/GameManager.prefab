@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 5228561141339378982}
-  creditsMenu: {fileID: 3509176652169905253, guid: db832b5415e8fea42b0e4cfe11f8e216, type: 3}
+  creditsMenu: {fileID: 0}
 --- !u!1001 &8663955043895955779
 PrefabInstance:
   m_ObjectHideFlags: 0

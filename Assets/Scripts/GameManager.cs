@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
     int points = 0;
     float lastPlayerMaxHeight = 0;
     public GameObject pauseMenu;
-    public GameObject creditsMenu;
 
     static GameManager instance;
 
@@ -83,6 +82,14 @@ public class GameManager : MonoBehaviour
     public void Play()
     {
         SceneManager.LoadScene("Game");
+    }
+
+    public void HowTo() {
+        SceneManager.LoadScene("HowTo", LoadSceneMode.Additive);
+    }
+
+    public void Credits() {
+        SceneManager.LoadScene("Credits", LoadSceneMode.Additive);
     }
 
     public void Inventory()
