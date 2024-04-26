@@ -9,7 +9,10 @@ public class GameManager : MonoBehaviour
     float lastPlayerMaxHeight = 0;
     public GameObject pauseMenu;
 
-    static GameManager instance;
+    public int rockIndex = 0;
+    public int backgroundIndex = 0;
+
+    public static GameManager instance { get; private set; }
 
     private void Awake() {
         if (instance != null) {
