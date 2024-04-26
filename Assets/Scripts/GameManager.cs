@@ -84,6 +84,7 @@ public class GameManager : MonoBehaviour
 
     public void Play()
     {
+        lastPlayerMaxHeight = 0;
         SceneManager.LoadScene("Game");
     }
 
