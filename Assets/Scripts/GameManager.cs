@@ -8,6 +8,17 @@ public class GameManager : MonoBehaviour
     int points = 0;
     float lastPlayerMaxHeight = 0;
     public GameObject pauseMenu;
+    public GameObject creditsMenu;
+
+    static GameManager instance;
+
+    private void Awake() {
+        if (instance != null) {
+            Destroy(gameObject);
+        }
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
 
     void Start()
     {
@@ -62,15 +73,25 @@ public class GameManager : MonoBehaviour
         {
             Time.timeScale = 1.0f;
             pauseMenu.SetActive(false);
-        } else
+        } else if (SceneManager.GetActiveScene().buildIndex != 0)
         {
             Time.timeScale = 0.0f;
             pauseMenu.SetActive(true);
         }
     }
 
+    public void Play()
+    {
+        SceneManager.LoadScene("Game");
+    }
+
     public void Inventory()
     {
-        SceneManager.LoadScene("Inventory");
+        SceneManager.LoadScene("Inventory", LoadSceneMode.Additive);
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 }
