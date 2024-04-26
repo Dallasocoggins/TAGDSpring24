@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    int points = 0;
+    public int points { get; private set; } = 0;
     float lastPlayerMaxHeight = 0;
     public GameObject pauseMenu;
 
