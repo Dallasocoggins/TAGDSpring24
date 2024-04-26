@@ -97,6 +97,13 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Inventory", LoadSceneMode.Additive);
     }
 
+    public void MainMenu()
+    {
+        Time.timeScale = 1.0f;
+        pauseMenu.SetActive(false);
+        SceneManager.LoadScene("MainMenu");
+    }
+
     public void Quit()
     {
         Application.Quit();

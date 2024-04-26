@@ -388,7 +388,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 0c78f19b6aabad34abbc752cfaeed8e7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -407,14 +407,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 731135933}
-  m_LocalRotation: {x: -0, y: -0, z: 0.23174791, w: 0.9727759}
-  m_LocalPosition: {x: 35, y: 28, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.22495107, w: 0.9743701}
+  m_LocalPosition: {x: 35.23, y: 27.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 366504069}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 26.8}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 26}
 --- !u!4 &1143954466 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3311209143844062297, guid: 7adba1e200463df4e9a689344d05564b, type: 3}
@@ -628,7 +628,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1674601944}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: -4.38, y: 2.96, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -902,11 +902,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 872324731476521061, guid: bc4f5f5d99804bb48a834f7d2ab3446a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.47717842
+      value: -1.56
       objectReference: {fileID: 0}
     - target: {fileID: 872324731476521061, guid: bc4f5f5d99804bb48a834f7d2ab3446a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.80912864
+      value: 4.17
       objectReference: {fileID: 0}
     - target: {fileID: 872324731476521061, guid: bc4f5f5d99804bb48a834f7d2ab3446a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -947,6 +947,10 @@ PrefabInstance:
     - target: {fileID: 6523417122024247991, guid: bc4f5f5d99804bb48a834f7d2ab3446a, type: 3}
       propertyPath: m_Name
       value: Sisyphus
+      objectReference: {fileID: 0}
+    - target: {fileID: 6756397385861741284, guid: bc4f5f5d99804bb48a834f7d2ab3446a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc4f5f5d99804bb48a834f7d2ab3446a, type: 3}

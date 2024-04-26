@@ -223,7 +223,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!1 &1019491594
 GameObject:
@@ -262,7 +262,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -200}
+  m_AnchoredPosition: {x: -136, y: -296}
   m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1019491596
@@ -306,8 +306,8 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 55efc713b4deb22438a95b544b6dbccb, type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: 55efc713b4deb22438a95b544b6dbccb, type: 3}
+    m_HighlightedSprite: {fileID: 21300000, guid: 1a5fbdefa8d3ced429a3bf0a82a98e00, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 1a5fbdefa8d3ced429a3bf0a82a98e00, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -353,7 +353,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0301c528280247f4fa3b9da8f1757661, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a292ab597da5a4a498cb7cd598c43552, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -381,7 +381,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1334884918}
   m_Layer: 0
-  m_Name: Credits
+  m_Name: HowTo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -461,7 +461,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b499f9c12cbc4614daa5b81a81f621b8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d5bbd1f4b8b0b0f4c92dc184ae6316d2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -46,7 +46,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 5228561141339378982}
-  creditsMenu: {fileID: 0}
 --- !u!1001 &8663955043895955779
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -97,22 +96,6 @@ PrefabInstance:
     - target: {fileID: 1372679424917959929, guid: 093fc7a063443aa4387775e2d41d0d99, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2394023826308345074, guid: 093fc7a063443aa4387775e2d41d0d99, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1204619832774383638}
-    - target: {fileID: 2394023826308345074, guid: 093fc7a063443aa4387775e2d41d0d99, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Inventory
-      objectReference: {fileID: 0}
-    - target: {fileID: 2394023826308345074, guid: 093fc7a063443aa4387775e2d41d0d99, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2394023826308345074, guid: 093fc7a063443aa4387775e2d41d0d99, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3509176652169905253, guid: 093fc7a063443aa4387775e2d41d0d99, type: 3}
       propertyPath: m_Name
