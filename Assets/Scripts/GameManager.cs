@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public int points { get; private set; } = 0;
     float lastPlayerMaxHeight = 0;
+    float maxHeight = 0;
     public GameObject pauseMenu;
 
     public int personIndex = 0;
@@ -40,16 +41,30 @@ public class GameManager : MonoBehaviour
     {
         if (lastPlayerMaxHeight < p.gameObject.transform.localPosition.y)
         {
-            points += (int)p.gameObject.transform.localPosition.y;
+            points += (int)p.gameObject.transform.localPosition.y/100;
             lastPlayerMaxHeight = p.gameObject.transform.localPosition.y;
+            if(lastPlayerMaxHeight > maxHeight)
+            {
+                maxHeight = lastPlayerMaxHeight;
+            }
+            p.UpdateHeightText(maxHeight);
+            p.UpdatePointsText(points);
             Debug.Log("Points: " + points);
             SavePoints(); // Save points after updating
         }
     }
 
+    public void ClearPoints(player p)
+    {
+        points = 0;
+        p.UpdatePointsText(points);
+        SavePoints();
+    }
+
     void SavePoints()
     {
         PlayerPrefs.SetInt("Points", points);
+        PlayerPrefs.SetFloat("MaxHeight", maxHeight);
         PlayerPrefs.Save();
     }
 
@@ -59,6 +74,17 @@ public class GameManager : MonoBehaviour
         {
             points = PlayerPrefs.GetInt("Points");
             Debug.Log("Loaded Points: " + points);
+        }
+        else
+        {
+            Debug.Log("No saved points found.");
+        }
+
+
+        if (PlayerPrefs.HasKey("MaxHeight"))
+        {
+            maxHeight = PlayerPrefs.GetInt("MaxHeight");
+            Debug.Log("Loaded Height: " + maxHeight);
         }
         else
         {

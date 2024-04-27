@@ -30,6 +30,8 @@ public class player : MonoBehaviour
     public GameManager gm;
 
     public TextMeshProUGUI promptText;
+    public TextMeshProUGUI pointsText;
+    public TextMeshProUGUI heightText;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +42,9 @@ public class player : MonoBehaviour
         gm = GameManager.instance;
 
         promptText = GameObject.FindGameObjectWithTag("Prompt").GetComponent<TextMeshProUGUI>();
+        pointsText = GameObject.FindGameObjectWithTag("Points").GetComponent<TextMeshProUGUI>();
+        heightText = GameObject.FindGameObjectWithTag("Height").GetComponent<TextMeshProUGUI>();
+        gm.UpdatePoints(this);
     }
 
     void Update()
@@ -55,6 +60,11 @@ public class player : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             gm.PauseMenuToggle();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Home))
+        {
+            gm.ClearPoints(this);
         }
     }
 
@@ -77,5 +87,15 @@ public class player : MonoBehaviour
         currentKey = keys[randomIndex];
         promptText.text = currentKey.ToString();
         Debug.Log(currentKey);
+    }
+
+    public void UpdatePointsText(int points)
+    {
+        pointsText.text = "Points: " + points.ToString();
+    }
+
+    public void UpdateHeightText(float height)
+    {
+        heightText.text = "Max Height: " + height.ToString();
     }
 }
