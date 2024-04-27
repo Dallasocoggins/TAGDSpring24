@@ -18,6 +18,8 @@ public class ItemGrid : MonoBehaviour {
 
     public ItemType type;
 
+    ItemType startingType = ItemType.Rock;
+
     GameObject[] outlines;
     Image[] images;
 
@@ -65,7 +67,6 @@ public class ItemGrid : MonoBehaviour {
     }
 
 
-    // Start is called before the first frame update
     void Start()
     {
         outlines = new GameObject[sprites.Length];
@@ -107,6 +108,8 @@ public class ItemGrid : MonoBehaviour {
         }
 
         outlines[itemIndex].SetActive(true);
+
+        gameObject.SetActive(type == startingType);
     }
 
     void OnClick(int index) {
@@ -122,7 +125,7 @@ public class ItemGrid : MonoBehaviour {
         outlines[index].SetActive(true);
     }
 
-    void Unlock(int index) {
+    public void Unlock(int index) {
         images[index].sprite = sprites[index];
         unlockedArray[index] = true;
     }

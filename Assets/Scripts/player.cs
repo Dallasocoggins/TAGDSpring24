@@ -45,6 +45,7 @@ public class player : MonoBehaviour
         pointsText = GameObject.FindGameObjectWithTag("Points").GetComponent<TextMeshProUGUI>();
         heightText = GameObject.FindGameObjectWithTag("Height").GetComponent<TextMeshProUGUI>();
         gm.UpdatePoints(this);
+        UpdatePointsText(gm.points);
     }
 
     void Update()
@@ -64,7 +65,8 @@ public class player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Home))
         {
-            gm.ClearPoints(this);
+            gm.ClearPoints();
+            UpdatePointsText(gm.points);
         }
     }
 
@@ -79,6 +81,7 @@ public class player : MonoBehaviour
         }
 
         gm.UpdatePoints(this);
+        UpdatePointsText(gm.points);
     }
 
     void SetRandomKey()

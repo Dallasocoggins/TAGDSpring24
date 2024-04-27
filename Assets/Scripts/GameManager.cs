@@ -55,16 +55,21 @@ public class GameManager : MonoBehaviour
                 maxHeight = lastPlayerMaxHeight;
             }
             p.UpdateHeightText(maxHeight);
-            p.UpdatePointsText(points);
+            //p.UpdatePointsText(points);
             Debug.Log("Points: " + points);
             SavePoints(); // Save points after updating
         }
     }
 
-    public void ClearPoints(player p)
+    public void ClearPoints()
     {
         floatPoints = 0;
-        p.UpdatePointsText(points);
+        //p.UpdatePointsText(points);
+        SavePoints();
+    }
+
+    public void SubtractPoints(int amount) {
+        floatPoints -= amount;
         SavePoints();
     }
 
@@ -98,6 +103,17 @@ public class GameManager : MonoBehaviour
             Debug.Log("No saved points found.");
         }
 
+        if (PlayerPrefs.HasKey("UnlockedPeople")) {
+            int unlockedPeopleInt = PlayerPrefs.GetInt("UnlockedPeople");
+            for (int i = 0; i < 32; i++) {
+                unlockedPeople[i] = ((unlockedPeopleInt >> i) & 1) != 0;
+            }
+        }
+        else {
+            Debug.Log("No saved unlocked rocks found.");
+            unlockedPeople[0] = true;
+        }
+
         if (PlayerPrefs.HasKey("UnlockedRocks")) {
             int unlockedRocksInt = PlayerPrefs.GetInt("UnlockedRocks");
             for (int i = 0; i < 32; i++) {
@@ -107,6 +123,17 @@ public class GameManager : MonoBehaviour
         else {
             Debug.Log("No saved unlocked rocks found.");
             unlockedRocks[0] = true;
+        }
+
+        if (PlayerPrefs.HasKey("UnlockedBackgrounds")) {
+            int unlockedBackgroundsInt = PlayerPrefs.GetInt("UnlockedBackgrounds");
+            for (int i = 0; i < 32; i++) {
+                unlockedBackgrounds[i] = ((unlockedBackgroundsInt >> i) & 1) != 0;
+            }
+        }
+        else {
+            Debug.Log("No saved unlocked rocks found.");
+            unlockedBackgrounds[0] = true;
         }
     }
 
