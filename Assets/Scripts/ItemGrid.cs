@@ -19,6 +19,8 @@ public class ItemGrid : MonoBehaviour {
     public ItemType type;
 
     GameObject[] outlines;
+    Image[] images;
+
     int itemIndex {
         get {
             switch (type) {
@@ -67,17 +69,19 @@ public class ItemGrid : MonoBehaviour {
     void Start()
     {
         outlines = new GameObject[sprites.Length];
+        images = new Image[sprites.Length];
 
         for (int i = 0; i < sprites.Length; i++) {
             var sprite = unlockedArray[i] ? sprites[i] : lockedSprite;
 
             var newObject = new GameObject();
-            newObject.name = sprite.name;
+            newObject.name = sprites[i].name;
             newObject.transform.parent = transform;
 
             var image = newObject.AddComponent<Image>();
             image.sprite = sprite;
             image.preserveAspect = true;
+            images[i] = image;
 
             var button = newObject.AddComponent<Button>();
             // Creating a new variable like this will make sure each lambda expression for the onClick has a different value
@@ -107,6 +111,7 @@ public class ItemGrid : MonoBehaviour {
 
     void OnClick(int index) {
         if (!unlockedArray[index]) {
+            Unlock(index);
             return;
         }
 
@@ -118,6 +123,7 @@ public class ItemGrid : MonoBehaviour {
     }
 
     void Unlock(int index) {
-
+        images[index].sprite = sprites[index];
+        unlockedArray[index] = true;
     }
 }
