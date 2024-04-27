@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6251455298819867742}
   - component: {fileID: 2493306828071853320}
+  - component: {fileID: 1047805052840441509}
   m_Layer: 0
   m_Name: bodies_0001s_0004_leg-left2
   m_TagString: Untagged
@@ -84,6 +85,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1047805052840441509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498607710707768494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c15734ecf14d22f4f89af20691e8fd6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: a292cda989c5e2f4b8a3115eb879ae73, type: 3}
+  - {fileID: 21300000, guid: 8cf82ad827cc1de4c9ac8f5b8cfe39ac, type: 3}
+  - {fileID: 21300000, guid: b01945b5a7a0f7d489cc57d39fa50959, type: 3}
 --- !u!1 &1283567970567035668
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,6 +111,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4305156515637528861}
   - component: {fileID: 106537722476964734}
+  - component: {fileID: 7659731370887014582}
   m_Layer: 0
   m_Name: bodies_0001s_0005_leg-right2
   m_TagString: Untagged
@@ -168,6 +186,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7659731370887014582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1283567970567035668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c15734ecf14d22f4f89af20691e8fd6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: f806beb60c3a990468e4eb6867fd8102, type: 3}
+  - {fileID: 21300000, guid: 48a6c2a8af3d7ba4e900371dc9e12335, type: 3}
+  - {fileID: 21300000, guid: 89c98b79f15d5d14abe9d5b7529bcadd, type: 3}
 --- !u!1 &1702504948704741236
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,6 +212,7 @@ GameObject:
   m_Component:
   - component: {fileID: 673111482692398649}
   - component: {fileID: 6284514733446883055}
+  - component: {fileID: 910423938022553731}
   m_Layer: 0
   m_Name: bodies_0001s_0002_torso2
   m_TagString: Untagged
@@ -252,6 +287,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &910423938022553731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1702504948704741236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c15734ecf14d22f4f89af20691e8fd6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: fce0a780cbe632d46bb287d075739b56, type: 3}
+  - {fileID: 21300000, guid: 5047b99e67ba3174da7b2c15691bac92, type: 3}
+  - {fileID: 21300000, guid: 645beb9af0e08d842b48716896ecb7f4, type: 3}
 --- !u!1 &5689197328807540261
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,6 +313,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1259893918222949749}
   - component: {fileID: 321528411790958422}
+  - component: {fileID: 1102190998220269732}
   m_Layer: 0
   m_Name: bodies_0001s_0003_arm-left2
   m_TagString: Untagged
@@ -336,6 +388,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1102190998220269732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5689197328807540261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c15734ecf14d22f4f89af20691e8fd6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: bda562ada61495044ab848d2c971eabf, type: 3}
+  - {fileID: 21300000, guid: e32fbd04a7f7906408e6f69175f31d70, type: 3}
+  - {fileID: 21300000, guid: 06bef7ad7871a8c45957fa46c8877cfb, type: 3}
 --- !u!1 &5878696228483399391
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,7 +414,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1526280017769310529}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -383,6 +451,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8954296998674302181}
   - component: {fileID: 7460939822549513953}
+  - component: {fileID: 8825202078741755412}
   m_Layer: 0
   m_Name: bodies_0001s_0000_head2
   m_TagString: Untagged
@@ -457,6 +526,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8825202078741755412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5882745807074926315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c15734ecf14d22f4f89af20691e8fd6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: 22ab469a9e270014d9353cb914d85b3a, type: 3}
+  - {fileID: 21300000, guid: cf2d48f2d928ac94fb67cc362a2c7a62, type: 3}
+  - {fileID: 21300000, guid: 439f94e342a08434485506a21c2ccd76, type: 3}
 --- !u!1 &8668651781587549315
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,6 +552,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3953650066706603217}
   - component: {fileID: 4685284986095838296}
+  - component: {fileID: 1422315893821444015}
   m_Layer: 0
   m_Name: bodies_0001s_0001_arm-right2
   m_TagString: Untagged
@@ -541,3 +627,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1422315893821444015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8668651781587549315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c15734ecf14d22f4f89af20691e8fd6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: 2622a37d5e126d8458dfac5ade804eec, type: 3}
+  - {fileID: 21300000, guid: f2d15f1079a3c084894fac05d31367ed, type: 3}
+  - {fileID: 21300000, guid: aba0a31711efba542a2cb71c09366786, type: 3}

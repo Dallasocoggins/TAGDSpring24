@@ -1300,7 +1300,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 21300000, guid: 45482d6530e2ef54ca25ca7329dbc25a, type: 3}
+  - {fileID: 21300000, guid: 22ab469a9e270014d9353cb914d85b3a, type: 3}
+  - {fileID: 21300000, guid: cf2d48f2d928ac94fb67cc362a2c7a62, type: 3}
+  - {fileID: 21300000, guid: 439f94e342a08434485506a21c2ccd76, type: 3}
   outlineSprite: {fileID: 21300000, guid: 78bb4faf5734fc44691f5b6fc05b366f, type: 3}
   lockedSprite: {fileID: 21300000, guid: 666cbd88f5824d44b90c4822c49aeab9, type: 3}
   type: 0
