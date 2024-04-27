@@ -114,7 +114,7 @@ public class ItemGrid : MonoBehaviour {
 
     void OnClick(int index) {
         if (!unlockedArray[index]) {
-            Unlock(index);
+            //Unlock(index);
             return;
         }
 
