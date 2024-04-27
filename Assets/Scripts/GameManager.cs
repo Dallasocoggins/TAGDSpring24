@@ -16,6 +16,10 @@ public class GameManager : MonoBehaviour
     public int rockIndex = 0;
     public int backgroundIndex = 0;
 
+    public bool[] unlockedPeople = new bool[32];
+    public bool[] unlockedRocks = new bool[32];
+    public bool[] unlockedBackgrounds = new bool[32];
+
     public static GameManager instance { get; private set; } = null;
 
     private void Awake() {
@@ -92,6 +96,17 @@ public class GameManager : MonoBehaviour
         else
         {
             Debug.Log("No saved points found.");
+        }
+
+        if (PlayerPrefs.HasKey("UnlockedRocks")) {
+            int unlockedRocksInt = PlayerPrefs.GetInt("UnlockedRocks");
+            for (int i = 0; i < 32; i++) {
+                unlockedRocks[i] = ((unlockedRocksInt >> i) & 1) != 0;
+            }
+        }
+        else {
+            Debug.Log("No saved unlocked rocks found.");
+            unlockedRocks[0] = true;
         }
     }
 

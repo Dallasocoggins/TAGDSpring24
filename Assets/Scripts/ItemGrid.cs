@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class ItemGrid : MonoBehaviour {
     public Sprite[] sprites;
     public Sprite outlineSprite;
+    public Sprite lockedSprite;
 
     public enum ItemType {
         Person,
@@ -46,6 +47,21 @@ public class ItemGrid : MonoBehaviour {
         }
     }
 
+    bool[] unlockedArray {
+        get {
+            switch (type) {
+                case ItemType.Person:
+                    return GameManager.instance.unlockedPeople;
+                case ItemType.Rock:
+                    return GameManager.instance.unlockedRocks;
+                case ItemType.Background:
+                    return GameManager.instance.unlockedBackgrounds;
+                default:
+                    return null;
+            }
+        }
+    }
+
 
     // Start is called before the first frame update
     void Start()
@@ -53,7 +69,7 @@ public class ItemGrid : MonoBehaviour {
         outlines = new GameObject[sprites.Length];
 
         for (int i = 0; i < sprites.Length; i++) {
-            var sprite = sprites[i];
+            var sprite = unlockedArray[i] ? sprites[i] : lockedSprite;
 
             var newObject = new GameObject();
             newObject.name = sprite.name;
@@ -90,10 +106,18 @@ public class ItemGrid : MonoBehaviour {
     }
 
     void OnClick(int index) {
+        if (!unlockedArray[index]) {
+            return;
+        }
+
         itemIndex = index;
         foreach (var outline in outlines) {
             outline.SetActive(false);
         }
         outlines[index].SetActive(true);
+    }
+
+    void Unlock(int index) {
+
     }
 }
