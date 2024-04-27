@@ -5,7 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public int points { get; private set; } = 0;
+    float floatPoints = 0f;
+    public int points => (int)floatPoints;
+    public float unitsPerPoint = 1f;
     float lastPlayerMaxHeight = 0;
     float maxHeight = 0;
     public GameObject pauseMenu;
@@ -41,7 +43,8 @@ public class GameManager : MonoBehaviour
     {
         if (lastPlayerMaxHeight < p.gameObject.transform.localPosition.y)
         {
-            points += (int)p.gameObject.transform.localPosition.y/100;
+            var heightDelta = p.gameObject.transform.localPosition.y - lastPlayerMaxHeight;
+            floatPoints += heightDelta / unitsPerPoint;
             lastPlayerMaxHeight = p.gameObject.transform.localPosition.y;
             if(lastPlayerMaxHeight > maxHeight)
             {
@@ -56,7 +59,7 @@ public class GameManager : MonoBehaviour
 
     public void ClearPoints(player p)
     {
-        points = 0;
+        floatPoints = 0;
         p.UpdatePointsText(points);
         SavePoints();
     }
@@ -72,7 +75,7 @@ public class GameManager : MonoBehaviour
     {
         if (PlayerPrefs.HasKey("Points"))
         {
-            points = PlayerPrefs.GetInt("Points");
+            floatPoints = PlayerPrefs.GetInt("Points");
             Debug.Log("Loaded Points: " + points);
         }
         else

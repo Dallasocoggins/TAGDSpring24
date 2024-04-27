@@ -358,6 +358,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0c78f19b6aabad34abbc752cfaeed8e7, type: 3}
   - {fileID: 21300000, guid: 1c4880648526f2a4f954548a6492299b, type: 3}
   - {fileID: 21300000, guid: acd07db0e0cd8ca4eb8972bdc9124f3c, type: 3}
+  outlineSprite: {fileID: 21300000, guid: 78bb4faf5734fc44691f5b6fc05b366f, type: 3}
   type: 2
 --- !u!1 &767050073
 GameObject:
@@ -1069,6 +1070,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprites:
   - {fileID: 21300000, guid: 45482d6530e2ef54ca25ca7329dbc25a, type: 3}
+  outlineSprite: {fileID: 21300000, guid: 78bb4faf5734fc44691f5b6fc05b366f, type: 3}
   type: 0
 --- !u!114 &1867594880
 MonoBehaviour:
@@ -1346,6 +1348,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: a182c76f5a19bbf40b9392e91205d717, type: 3}
   - {fileID: 21300000, guid: 17d56bb26e403d349bf98cb6d32b7153, type: 3}
   - {fileID: 21300000, guid: 43062aea58e7d8543af56cf201a5f526, type: 3}
+  outlineSprite: {fileID: 21300000, guid: 78bb4faf5734fc44691f5b6fc05b366f, type: 3}
   type: 1
 --- !u!1 &1977382469
 GameObject:

@@ -75,7 +75,7 @@ public class player : MonoBehaviour
             Vector3 vel = rb.velocity;
             vel.x = speed;
             rb.velocity = vel;
-            speedTimeLeft -= Time.deltaTime;
+            speedTimeLeft -= Time.fixedDeltaTime;
         }
 
         gm.UpdatePoints(this);

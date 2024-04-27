@@ -45,7 +45,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fde00b77eebca241b018ed160a4be49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unitsPerPoint: 1
   pauseMenu: {fileID: 5228561141339378982}
+  personIndex: 0
+  rockIndex: 0
+  backgroundIndex: 0
 --- !u!1001 &8663955043895955779
 PrefabInstance:
   m_ObjectHideFlags: 0
