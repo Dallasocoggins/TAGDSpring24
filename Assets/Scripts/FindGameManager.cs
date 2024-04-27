@@ -9,7 +9,10 @@ public class FindGameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameManager = FindObjectOfType<GameManager>();
+        while (!gameManager)
+        {
+            gameManager = FindObjectOfType<GameManager>();
+        }
     }
 
     public void CallOnGameManager(string methodName) {
