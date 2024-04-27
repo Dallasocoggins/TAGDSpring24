@@ -22,8 +22,9 @@ public class ItemGrid : MonoBehaviour
             image.sprite = sprite;
 
             var button = newObject.AddComponent<Button>();
-            button.onClick.AddListener(() => OnClick(i));
-            button.onClick.AddListener(SayHi);
+            // Creating a new variable like this will make sure each lambda expression for the onClick has a different value
+            var index = i;
+            button.onClick.AddListener(() => OnClick(index));
             var navigation = button.navigation;
             navigation.mode = Navigation.Mode.None;
             button.navigation = navigation;
@@ -31,10 +32,6 @@ public class ItemGrid : MonoBehaviour
     }
 
     void OnClick(int index) {
-        Debug.Log("Index " + index + " clicked");
-    }
-
-    void SayHi() {
-        Debug.Log("Hi!");
+        GameManager.instance.rockIndex = index;
     }
 }
