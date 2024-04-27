@@ -8,6 +8,14 @@ public class ItemGrid : MonoBehaviour
 {
     public Sprite[] sprites;
 
+    public enum ItemType {
+        Person,
+        Rock,
+        Background,
+    }
+
+    public ItemType type;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +28,7 @@ public class ItemGrid : MonoBehaviour
 
             var image = newObject.AddComponent<Image>();
             image.sprite = sprite;
+            image.preserveAspect = true;
 
             var button = newObject.AddComponent<Button>();
             // Creating a new variable like this will make sure each lambda expression for the onClick has a different value
@@ -32,6 +41,16 @@ public class ItemGrid : MonoBehaviour
     }
 
     void OnClick(int index) {
-        GameManager.instance.rockIndex = index;
+        switch (type) {
+            case ItemType.Person:
+                GameManager.instance.personIndex = index;
+                break;
+            case ItemType.Rock:
+                GameManager.instance.rockIndex = index;
+                break;
+            case ItemType.Background:
+                GameManager.instance.backgroundIndex = index;
+                break;
+        }
     }
 }

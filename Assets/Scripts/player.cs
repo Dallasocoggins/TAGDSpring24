@@ -37,19 +37,7 @@ public class player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         SetRandomKey();
 
-        GameObject gameManagerObject = GameObject.Find("GameManager");
-        if (gameManagerObject != null)
-        {
-            gm = gameManagerObject.GetComponent<GameManager>();
-            if (gm == null)
-            {
-                Debug.LogError("GameManager component not found on GameManager object.");
-            }
-        }
-        else
-        {
-            Debug.LogError("GameManager object not found in the scene.");
-        }
+        gm = GameManager.instance;
 
         promptText = GameObject.FindGameObjectWithTag("Prompt").GetComponent<TextMeshProUGUI>();
     }
