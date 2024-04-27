@@ -21,6 +21,8 @@ public class Tumbler : MonoBehaviour
         itemGrids[gridIndex].Unlock(itemIndex);
         outputImage.enabled = true;
         outputImage.sprite = itemGrids[gridIndex].sprites[itemIndex];
+
+        GameManager.instance.SavePoints();
     }
 
     (int, int) GetRandomIndex() {

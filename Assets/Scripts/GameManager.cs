@@ -38,11 +38,6 @@ public class GameManager : MonoBehaviour
         pauseMenu.SetActive(false);
     }
 
-    void Update()
-    {
-
-    }
-
     public void UpdatePoints(player p)
     {
         if (lastPlayerMaxHeight < p.gameObject.transform.localPosition.y)
@@ -64,7 +59,17 @@ public class GameManager : MonoBehaviour
     public void ClearPoints()
     {
         floatPoints = 0;
-        //p.UpdatePointsText(points);
+
+        unlockedPeople[0] = true;
+        unlockedRocks[0] = true;
+        unlockedBackgrounds[0] = true;
+
+        for (int i = 1; i < 32; i++) {
+            unlockedPeople[i] = false;
+            unlockedRocks[i] = false;
+            unlockedBackgrounds[i] = false;
+        }
+
         SavePoints();
     }
 
@@ -73,10 +78,15 @@ public class GameManager : MonoBehaviour
         SavePoints();
     }
 
-    void SavePoints()
+    public void SavePoints()
     {
         PlayerPrefs.SetInt("Points", points);
         PlayerPrefs.SetFloat("MaxHeight", maxHeight);
+
+        PlayerPrefs.SetInt("UnlockedPeople", ConvertToInt(unlockedPeople));
+        PlayerPrefs.SetInt("UnlockedRocks", ConvertToInt(unlockedRocks));
+        PlayerPrefs.SetInt("UnlockedBackgrounds", ConvertToInt(unlockedBackgrounds));
+
         PlayerPrefs.Save();
     }
 
@@ -185,5 +195,13 @@ public class GameManager : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+
+    int ConvertToInt(bool[] array) {
+        int output = 0;
+        for (int i = 0; i < 32; i++) {
+            output |= array[i] ? 1 << i : 0;
+        }
+        return output;
     }
 }
